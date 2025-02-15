@@ -127,6 +127,17 @@ footer {
     box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
 }
 
+/* New: display contact info horizontally in the footer */
+footer .contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+footer .contact-info p {
+    margin: 0;
+}
+
 .project img {
     width: 100%;
     max-width: 350px;  /* New: set a maximum width */
