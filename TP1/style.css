@@ -102,6 +102,14 @@ footer {
     box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
 }
 
+.project img {
+    width: 100%;
+    max-width: 350px;  /* New: set a maximum width */
+    height: auto;      /* New: maintain aspect ratio */
+    display: block;
+    margin: 0 auto;    /* New: center the image within the project container */
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
