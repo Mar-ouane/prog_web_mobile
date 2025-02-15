@@ -21,11 +21,36 @@ header {
     z-index: 1100;
 }
 
+.header-left,
+.header-center,
+.header-right {
+    flex: 1;
+}
+
+.header-left {
+    text-align: left;
+}
+
+.header-center {
+    text-align: center;
+}
+
+.header-right {
+    text-align: right;
+}
+
 header img {
     border-radius: 50%;
     height: 70px;           /* New: reduced height to fit header */
     width: auto;            /* New: auto width to maintain aspect ratio */
     object-fit: cover;      /* New: ensures proper scaling without distortion */
+}
+
+.header-right img {
+    border-radius: 50%;
+    height: 70px;
+    width: auto;
+    object-fit: cover;
 }
 
 header h1 {
