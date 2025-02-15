@@ -4,73 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-        }
-        nav a {
-            color: white;
-            padding: 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        .container {
-            padding: 2rem;
-        }
-        .section {
-            margin-bottom: 2rem;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <!-- ...existing head elements... -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<header style="display: flex; align-items: center; justify-content: space-between;">
-    <h1>My Portfolio</h1>
-    <img src="ProfilePic.png" alt="Profile Picture" style="border-radius: 50%; width: 100px; height: 100px;">
-</header>
+<body>
+    <header>
+        <h1>My  Portfolio</h1>
+        <img src="ProfilePic.png" alt="Profile Picture">
+    </header>
     <nav>
-        <a href="#about">About Me</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
     <div class="container">
-        <section id="about" class="section">
+        <section id="about">
             <h2>About Me</h2>
-            <p>Write something about yourself here.</p>
+            <p>A brief introduction about your background in data science, education, and interests.</p>
         </section>
-        <section id="projects" class="section">
+        <section id="projects">
             <h2>Projects</h2>
-            <p>Showcase your projects here.</p>
+            <p>Details of data science projects including machine learning, data analysis, and visualizations.</p>
         </section>
-        <section id="contact" class="section">
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>Python, R, SQL, Machine Learning, Data Visualization, and more.</p>
+        </section>
+        <section id="contact">
             <h2>Contact</h2>
-            <p>Provide your contact information here.</p>
+            <p>Provide your contact information or link to your professional profiles.</p>
         </section>
     </div>
     <footer>
-        <p>&copy; 2025 Marouane</p>
+        <p>&copy; 2025 Data Science Student</p>
     </footer>
+    <!-- ...existing body elements... -->
 </body>
 </html>
