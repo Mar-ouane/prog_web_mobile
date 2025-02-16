@@ -138,6 +138,20 @@ footer .contact-info p {
     margin: 0;
 }
 
+/* New: style for LinkedIn and GitHub links in the footer */
+footer .contact-info a {
+    color: inherit;         /* Use the same color as the parent */
+    text-decoration: none;  /* Remove underline */
+    font-weight: normal;    /* Normal font weight */
+    transition: all 0.3s ease;
+}
+
+footer .contact-info a:hover {
+    text-decoration: underline;  /* Highlight on hover */
+    color: #f5f5dc;              /* Optional: change to a highlight color */
+}
+
+
 .project img {
     width: 100%;
     max-width: 350px;  /* New: set a maximum width */
