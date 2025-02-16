@@ -135,7 +135,7 @@ footer .contact-info {
     gap: 1rem;
 }
 footer .contact-info p {
-    margin: 0;
+    margin: auto 0 0;
 }
 
 /* New: style for LinkedIn and GitHub links in the footer */
