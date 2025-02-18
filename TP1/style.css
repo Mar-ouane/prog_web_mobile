@@ -1,183 +1,301 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+* {
     padding: 0;
-    background-color: #eef2f3;  /* Updated: softer light background */
-}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #f5f5dc;  /* beige background */
-    color: #4b3621;           /* coffee text color */
-    padding: 0 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 90px;             /* fixed header height */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1100;
-}
-
-.header-left,
-.header-center,
-.header-right {
-    flex: 1;
-}
-
-.header-left {
-    text-align: left;
-}
-
-.header-center {
-    text-align: center;
-}
-
-.header-right {
-    text-align: right;
-}
-
-header img {
-    border-radius: 50%;
-    height: 70px;           /* New: reduced height to fit header */
-    width: auto;            /* New: auto width to maintain aspect ratio */
-    object-fit: cover;      /* New: ensures proper scaling without distortion */
-}
-
-.header-right img {
-    border-radius: 50%;
-    height: 70px;
-    width: auto;
-    object-fit: cover;
-}
-
-header h1 {
-    font-size: 2em;  /* New: larger header title */
     margin: 0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);  /* New: text shadow for depth */
+    font-family: Josefin Sans, sans-serif;
+    box-sizing: border-box;
+}
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-image: url(img/dark_laptop_long.jpg);
+    background-size: cover;
+    background-position: center;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 8%;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; 
+}
+.logo a {
+    color: white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+}
+span {
+    color: #00bfff;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+nav ul li a:hover {
+    color: #00bfff;
+    transition: 0.4s;
+}
+.btn {
+    padding: 10px 25px;
+    background-color: #00bfff;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform 0.4s;
+}
+.btn:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+    border: 2px solid #00bfff;
+    color: #00bfff;
+}
+.content {
+    position: absolute; 
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+}
+h1 {
+    color: white;
+    margin: 20px 0 20px;
+    font-size: 75px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+h3 {
+    color: white ;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+h4 {
+    color: #5ad6ff;
+    font-size: 20px;
+    letter-spacing: 2px;
 }
 
-nav {
-    position: fixed;
-    top: 90px;                /* below header */
+.newsletter form {
+    width: 380px;
+    max-width: 100%;
+    position: relative;
+}
+
+.newsletter form input:first-child {
+    display: inline-block;
     width: 100%;
-    height: 50px;             /* fixed nav height */
-    background-color: #6f4e37;  /* coffee color */
+    padding: 14px 130px 14px 15px;
+    border: 2px solid #00bfff;
+    outline: none;
+    border-radius: 30px;
+}
+.newsletter form input:last-child {
+    position: absolute;
+    display: inline-block;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background-color: #00bfff;
+    color: white;
+    box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+    top: 6px;
+    right: 6px;
+}
+.about {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: black;
+}
+.about img {
+    height: auto;
+    width: 50%;
+}
+.about-text {
+    width: 550px;
+}
+.main {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.about-text h2 {
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.about-text h5 {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+.about-text p {
+    color: #b1ebff;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+button {
+    background-color: #00bfff;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: transform 0.4s;
+    font-size: 16px;
+}
+button:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+    border: 2px solid #00bfff;
+    color: #00bfff;
+    cursor: pointer;
+}
+.services {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: black;
+}
+.title h2 {
+    color: white;
+    font-size: 75px;
+    width: 1130px;
+    margin:30px auto;
+    text-align: center;
+}
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1130px;
+    min-height: 400px;
+    margin: 0 auto;
+}
+.card {
+    width: 340px;
+    height: 420px;
+    padding: 20px 35px;
+    background-color: #191919;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 0px 15px #00bfff, 0px 0px 15px #858585;
+    transition: transform 0.4s;
+}
+.card:hover {
+    transform: scale(1.1);
+}
+.card i {
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    color: #5ad6ff;
+    margin: 20px 0px;
+}
+.card h5 {
+    color: white;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+.pra p {
+    color: #c5e7f3;
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 20px;
+}
+.card .button {
+    background-color: #00bfff;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 9px 22px;
+    border-radius: 30px;
+    transition: transform 0.4s;
+    font-size: 16px;
+}
+.card .button:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+    border: 2px solid #00bfff;
+    color: #00bfff;
+    cursor: pointer;
+}
+.skills {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: black;
+}
+.projects {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: black;
+}
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-}
-
-nav a {
-    color: #fafafa;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    margin: 0 0.5rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border-radius: 4px;
-    background-color: transparent;
-}
-
-nav a:hover {
-    background-color: #8b5a2b; /* lighter coffee tone */
-    transform: scale(1.05);  /* New: slight zoom on hover */
-}
-
-.container {
-    margin-top: 140px;        /* 90px (header) + 50px (nav) */
-    padding: 2rem;
-    background: #ffffff;  /* New: white background for content card */
-    border-radius: 8px;   /* New: rounded corners */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);  /* New: subtle shadow */
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;    /* New: max width */
-    border: 1px solid #ddd;  /* New: subtle border around container */
-}
-
-section {
-    margin-bottom: 2rem;
-    padding: 1rem;  /* New: inner padding */
-    border-bottom: 1px solid #e0e0e0;  /* New: separator for sections */
-}
-
-section h2 {
-    color: #333;  /* New: darker heading text */
-    border-bottom: 2px solid #ddd;  /* New: underline headings */
-    padding-bottom: 0.5rem;  /* New: spacing for heading underline */
-}
-
-section p {
-    line-height: 1.6;  /* New: improved text line spacing */
-    margin: 0.5rem 0;
-}
-
-section:last-child {
-    border-bottom: none;
-}
-
-footer {
-    background: #6f4e37;  /* Updated: smoother vertical gradient */
-    color: #f5f5dc;         /* New: coffee text color matching header */
-    text-align: center;
-    padding: 1rem;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-}
-
-/* New: display contact info horizontally in the footer */
-footer .contact-info {
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
-}
-footer .contact-info p {
-    margin: auto 0 0;
-}
-
-/* New: style for LinkedIn and GitHub links in the footer */
-footer .contact-info a {
-    color: inherit;         /* Use the same color as the parent */
-    text-decoration: none;  /* Remove underline */
-    font-weight: normal;    /* Normal font weight */
-    transition: all 0.3s ease;
-}
-
-footer .contact-info a:hover {
-    text-decoration: underline;  /* Highlight on hover */
-    color: #f5f5dc;              /* Optional: change to a highlight color */
-}
-
-
-.project img {
     width: 100%;
-    max-width: 350px;  /* New: set a maximum width */
-    height: auto;      /* New: maintain aspect ratio */
-    display: block;
-    margin: 0 auto;    /* New: center the image within the project container */
+    padding: 50px 10px;
+    background-image: url(img/footer.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.footer i {
+    font-size: 30px;
+    color: white;
+    margin: 0px 10px;
+}
+.footer a {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+
+}
+.footer a:hover {
+    color: #00bfff;
+    text-decoration: underline;
+    transition: 0.4s;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-    header img {
-        width: 80px;
-        height: 80px;
-        margin-top: 0.5rem;
-    }
-    nav {
-        flex-direction: column;
-    }
-    nav a {
-        padding: 0.5rem;
-    }
-    .container {
-        margin: 1rem;
-        padding: 1rem;
-    }
+.footer p {
+    display: block;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 40px;
+    text-align: center;
+    flex-basis: 100%;
 }
