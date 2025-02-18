@@ -33,7 +33,7 @@ nav {
 }
 
 span {
-    color: #33ccff;
+    color: #00bfff;
 }
 
 nav ul li {
@@ -43,9 +43,32 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
     color: white;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+nav ul li a:hover {
+    color: #00bfff;
+    transition: 0.4s;
+}
+
+.btn {
+    padding: 10px 25px;
+    background-color: #00bfff;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform 0.4s;
+}
+
+.btn:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+    border: 2px solid #00bfff;
+    color: #00bfff;
 }
