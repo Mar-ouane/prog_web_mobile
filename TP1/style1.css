@@ -16,17 +16,18 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 45px 8%;
-    /* background-color: rgb(249, 240, 240);
+    background-color: black;
     position: fixed;
     width: 100%;
-    z-index: 1000; */
+    z-index: 1000; 
 }
-.logo {
+.logo a {
     color: white;
     font-size: 35px;
     letter-spacing: 1px;
     font-weight: 700;
     cursor: pointer;
+    text-decoration: none;
 }
 span {
     color: #00bfff;
@@ -254,4 +255,52 @@ button:hover {
     width: 100%;
     padding: 100px 0px;
     background-color: black;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px 10px;
+    background-color: black;
+}
+.footer i {
+    font-size: 30px;
+    color: white;
+    margin: 0px 10px;
+}
+.footer a {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+
+}
+.footer a:hover {
+    color: #00bfff;
+    text-decoration: underline;
+    transition: 0.4s;
+}
+
+.footer p {
+    display: block;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 10px 10px;
+    text-align: center;
+}
+#copyrigth {
+    display: block;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 10px 10px;
+    text-align: center;
 }
