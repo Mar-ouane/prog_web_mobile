@@ -251,6 +251,19 @@ button:hover {
     padding: 100px 0px;
     background-color: black;
 }
+.skills .card {
+    width: 440px;
+    height: 520px;
+    padding: 20px 30px;
+    background-color: #191919;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 0px 15px #00bfff, 0px 0px 15px #858585;
+    transition: transform 0.4s;
+}
 .projects {
     width: 100%;
     padding: 100px 0px;
