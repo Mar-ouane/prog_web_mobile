@@ -260,6 +260,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     padding: 50px 10px;
     background-color: black;
@@ -289,18 +290,10 @@ button:hover {
 .footer p {
     display: block;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     text-transform: capitalize;
-    margin: 10px 10px;
+    margin-top: 40px;
     text-align: center;
-}
-#copyrigth {
-    display: block;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: capitalize;
-    margin: 10px 10px;
-    text-align: center;
+    flex-basis: 100%;
 }
