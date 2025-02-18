@@ -115,3 +115,8 @@ h4 {
     top: 6px;
     right: 6px;
 }
+.about {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: black;
+}
