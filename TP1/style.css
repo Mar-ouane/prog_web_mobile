@@ -207,6 +207,20 @@ button:hover {
     box-shadow: 0px 0px 15px #00bfff, 0px 0px 15px #858585;
     transition: transform 0.4s;
 }
+.services .card{
+    width: 350px;
+    height: 480px;
+    padding: 20px 35px;
+    background-color: #191919;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 0px 15px #00bfff, 0px 0px 15px #858585;
+    transition: transform 0.4s;
+
+}
 .card:hover {
     transform: scale(1.1);
 }
@@ -271,7 +285,7 @@ button:hover {
 }
 .projects .card {
     width: 440px;
-    height: 550px;
+    height: 500px;
     padding: 20px 35px;
     background-color: #191919;
     border-radius: 20px;
