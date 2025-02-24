@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marouane MOURAD - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,
+    500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="img/ico.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2 class="logo"><a href="index.html">Portfo<span>lio</span></a></h2>
+            <a href="index.html"   class="btn">Home</a>
+        </nav> <!-- end of nav -->
+    </header>
+    <section class="services" id="services">
+        <div class="title">
+            <h2>My <span>Services</span></h2>
+        </div>
+        <div class="box">
+            <div class="card ">
+                <i class="fa-solid fa-code"></i>
+                <h5>Web Development</h5>
+                <div class="pra">
+                    <p>Design and build responsive websites using HTML, CSS, JavaScript, and Bootstrap.
+                        Create and deploy full-stack web applications using Python, Flask, and MySQL.
+                    </p>
+                    <p style="text-align: center;">
+                        <a href="#" class="button">Read More</a>
+                    </p>
+                </div>
+            </div> <!-- end of card  service 1 -->
+
+            <div class="card ">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <h5>Data Analysis & Visualization</h5>
+                <div class="pra">
+                    <p>
+                        Perform exploratory data analysis (EDA) to uncover patterns, trends, and insights from datasets.
+                        Utilize advanced visualization techniques to create interactive and informative charts, graphs, and dashboards.
+                        Provide actionable insights to drive data-driven decision-making.
+                    </p>
+                    <p style="text-align: center;">
+                        <a href="#" class="button">Read More</a>
+                    </p>
+                </div>
+            </div> <!-- end of card  service 2 -->
+
+            <div class="card ">
+                <i class="fa-solid fa-user-gear"></i>
+                <h5>Custom Services</h5>
+                <div class="pra">
+                    <p>
+                        I offer a range of custom services tailored to your specific needs. 
+                        Whether it's data science, software engineering, or web development, I am here to help. 
+                        Let's collaborate to bring your ideas to life and achieve your goals.
+                    </p>
+                    <p style="text-align: center;">
+                        <a href="#" class="button">Read More</a>
+                    </p>
+                </div>
+            </div> <!-- end of card  service 3 -->
+
+        </div>
+        
+    </section> <!-- end of services section -->
+
+    <!-- Hire Me Section -->
+    <section class="hire-me" id="hire-me">
+        <div class="title">
+            <h2>Hire <span>Me</span></h2>
+        </div>
+        <div class="box">
+            <div class="card">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company-name">Company Name:</label>
+                        <input type="text" id="company-name" name="company-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Selected Service:</label>
+                        <select id="service" name="service" required>
+                            <option value="web-development">Web Development</option>
+                            <option value="data-analysis">Data Analysis & Visualization</option>
+                            <option value="custom-services">Custom Services</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Free Comment:</label>
+                        <textarea id="comments" name="comments" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+<footer class="footer" id="contact-me">
+    <div class="social-links"></div>
+        <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/marouane-mourad" target="_blank">LinkedIn</a>
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/Mar-ouane" target="_blank">GitHub</a>
+    </div>
+    <p >&copy; 2025 Marouane MOURAD</p>
+</footer>
+</html>
