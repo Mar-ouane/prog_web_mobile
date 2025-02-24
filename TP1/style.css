@@ -186,6 +186,30 @@ button:hover {
     margin:30px auto;
     text-align: center;
 }
+section.hero{
+    width: 1130px;
+    padding: 100px 0px;
+}
+section.about{
+    width: 1130px;
+    padding: 100px 0px;
+}
+section.services{
+    width: 1130px;
+    padding: 100px 0px;
+}
+section.skills{
+    width: 1130px;
+    padding: 100px 0px;
+}
+section.projects{
+    width: 1130px;
+    padding: 100px 0px;
+}
+section.footer{
+    width: 1130px;
+    padding: 100px 0px;
+}
 .box {
     display: flex;
     align-items: center;
