@@ -31,22 +31,16 @@ function formatTime(minutes, seconds) {
 
 function togglePauseResume() {
     const pauseResumeButton = document.getElementById('pause-btn');
-    isPaused = !isPaused;
-
     if (isPaused) {
-        clearInterval(timer);
-        pauseResumeButton.textContent = 'Resume';
-    } else {
+        // If currently paused, start the timer and change button to 'Pause'
         startTimer();
         pauseResumeButton.textContent = 'Pause';
-    }
-}
-
-function playTimer() {
-    if (isPaused) {
-        startTimer();
         isPaused = false;
-        document.getElementById('pause-btn').textContent = 'Pause';
+    } else {
+        // If timer is running, pause it and change button text to 'Play'
+        clearInterval(timer);
+        pauseResumeButton.textContent = 'Play';
+        isPaused = true;
     }
 }
 
@@ -69,11 +63,10 @@ function chooseTime() {
         minutes = enteredTime;
         seconds = 0;
         clearInterval(timer);
-        isPaused = true; // prevent timer from auto starting
+        isPaused = true; // ensure timer stays paused after choosing a new time
         const timerElement = document.getElementById('timer');
         timerElement.textContent = formatTime(minutes, seconds);
-        document.getElementById('pause-btn').textContent = 'Pause';
-        // Removed automatic startTimer() call here.
+        document.getElementById('pause-btn').textContent = 'Play';
     } else {
         alert('Invalid input. Please enter a valid number greater than 0.');
     }
