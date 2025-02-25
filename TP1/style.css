@@ -253,13 +253,7 @@ button:hover {
     transition: transform 0.4s;
     font-size: 16px;
 }
-.card .button:hover {
-    transform: scale(1.2);
-    background-color: transparent;
-    border: 2px solid #00bfff;
-    color: #00bfff;
-    cursor: pointer;
-}
+
 .skills {
     width: 100%;
     padding: 100px 0px;
@@ -346,7 +340,7 @@ button:hover {
     background-color: black;
 }
 .hire-me .card {
-    width: 600px;
+    width: 650px;
     height: 800px;
     padding: 20px 35px;
     background-color: #191919;
@@ -358,3 +352,76 @@ button:hover {
     box-shadow: 0px 0px 15px #00bfff, 0px 0px 15px #858585;
     transition: transform 0.4s;
 }
+.hire-me .card:hover {
+    transform: scale(1.03);
+}
+
+.hire-form form {
+    width: 380px;
+    max-width: 100%;
+    padding-top: 80px;
+    position: relative;
+    color: white;
+    margin: 0 auto; /* Center the form horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hire-form form input {
+    display: inline-block;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 130px 14px 15px;
+    border: 2px solid #00bfff;
+    outline: none;
+    border-radius: 30px;
+}
+.hire-form .form-group {
+    display: inline-block;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.hire-form form select {
+    display: inline-block;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 130px 14px 15px;
+    border: 2px solid #00bfff;
+    outline: none;
+    border-radius: 30px;
+}
+.hire-form form textarea {
+    display: inline-block;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 130px 14px 15px;
+    border: 2px solid #00bfff;
+    outline: none;
+    border-radius: 30px;
+}
+.hire-form form input[type="submit"] {
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 14px 70px 14px 70px;
+    border: 2px solid #00bfff;
+    outline: none;
+    border-radius: 30px;
+    background-color: #00bfff;
+    color: white;
+    font-weight: bold;
+    font-size: 16px; 
+}
+
+.hire-form form input[type="submit"]:hover {
+    transform: scale(1.07);
+    background-color: transparent;
+    border: 2px solid #00bfff;
+    color: #00bfff;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.2s, color 0.3s;
+}
+
+
