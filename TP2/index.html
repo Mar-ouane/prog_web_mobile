@@ -20,14 +20,17 @@
           Pomodoaro Timer
       </h1>
     <div class="main">
-        <div class="timer-circle" 
-             id="timer">15:00
-          </div>
+        <!-- Updated timer-circle markup -->
+        <div class="timer-circle" id="timer">
+            <svg class="progress-ring" width="220" height="220">
+                <circle class="progress-ring__circle" stroke="#3498db" stroke-width="8" fill="transparent" r="90" cx="110" cy="110"/>
+            </svg>
+            <div class="time-text">15:00</div>
+        </div>
         <div class="control-buttons">
             <button id="pause-btn" onclick="togglePauseResume()">Pause</button>
             <button onclick="restartTimer()">Restart</button>
             <button onclick="chooseTime()">Choose Time</button>
-            <!-- Removed separate Play button -->
         </div>
     </div>
     <script src="script.js"></script>

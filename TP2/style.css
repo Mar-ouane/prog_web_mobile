@@ -24,15 +24,46 @@ body {
 
 .timer-circle {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     margin: 20px auto;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 25px;
     color: crimson;
-    border: 8px solid #3498db;
+    /* Removed: border: 8px solid #3498db; */
+    position: relative; /* added */
+}
+
+/* New rule to ensure SVG fills the container */
+.timer-circle svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+    transition: stroke-dashoffset 0.35s;
+    transform: translate(0px, 0px);
+}
+
+.time-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: crimson;
 }
 
 .control-buttons {

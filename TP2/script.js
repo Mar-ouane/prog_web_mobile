@@ -3,14 +3,27 @@ let minutes = 15;
 let seconds = 0;
 let isPaused = false;
 let enteredTime = null;
+let initialTotalSeconds = minutes * 60; // new global total time
+
+// Initialize progress ring element
+const progressCircle = document.querySelector('.progress-ring__circle');
+const radius = progressCircle ? progressCircle.r.baseVal.value : 0;
+const circumference = 2 * Math.PI * radius;
+if (progressCircle) {
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = circumference;
+}
 
 function startTimer() {
     timer = setInterval(updateTimer, 1000);
 }
 
 function updateTimer() {
-    const timerElement = document.getElementById('timer');
-    timerElement.textContent = formatTime(minutes, seconds);
+    // Update the displayed time text
+    const timerText = document.querySelector('.time-text');
+    timerText.textContent = formatTime(minutes, seconds);
+    
+    updateProgress(); // Animate circle based on time left
 
     if (minutes === 0 && seconds === 0) {
         clearInterval(timer);
@@ -25,6 +38,15 @@ function updateTimer() {
     }
 }
 
+function updateProgress() {
+    const totalSeconds = initialTotalSeconds;
+    const timeLeft = minutes * 60 + seconds;
+    const offset = circumference - (timeLeft / totalSeconds) * circumference;
+    if (progressCircle) {
+        progressCircle.style.strokeDashoffset = offset;
+    }
+}
+
 function formatTime(minutes, seconds) {
     return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
@@ -32,12 +54,12 @@ function formatTime(minutes, seconds) {
 function togglePauseResume() {
     const pauseResumeButton = document.getElementById('pause-btn');
     if (isPaused) {
-        // If currently paused, start the timer and change button to 'Pause'
+        // If paused, start the timer and update button to 'Pause'
         startTimer();
         pauseResumeButton.textContent = 'Pause';
         isPaused = false;
     } else {
-        // If timer is running, pause it and change button text to 'Play'
+        // If running, pause the timer and update button to 'Play'
         clearInterval(timer);
         pauseResumeButton.textContent = 'Play';
         isPaused = true;
@@ -49,10 +71,11 @@ function restartTimer() {
     minutes = enteredTime || 15;
     seconds = 0;
     isPaused = false;
-    const timerElement = document.getElementById('timer');
-    timerElement.textContent = formatTime(minutes, seconds);
-    const pauseResumeButton = document.querySelector('.control-buttons button');
-    pauseResumeButton.textContent = 'Pause';
+    initialTotalSeconds = minutes * 60; // reset total seconds
+    const timerText = document.querySelector('.time-text');
+    timerText.textContent = formatTime(minutes, seconds);
+    document.getElementById('pause-btn').textContent = 'Pause';
+    updateProgress();
     startTimer();
 }
 
@@ -63,18 +86,22 @@ function chooseTime() {
         minutes = enteredTime;
         seconds = 0;
         clearInterval(timer);
-        isPaused = true; // ensure timer stays paused after choosing a new time
-        const timerElement = document.getElementById('timer');
-        timerElement.textContent = formatTime(minutes, seconds);
+        isPaused = true; // ensure timer stays paused
+        initialTotalSeconds = minutes * 60; // update total time
+        const timerText = document.querySelector('.time-text');
+        timerText.textContent = formatTime(minutes, seconds);
         document.getElementById('pause-btn').textContent = 'Play';
+        updateProgress();
     } else {
         alert('Invalid input. Please enter a valid number greater than 0.');
     }
 }
 
-// Initialize the timer display on page load
+// Initialize the timer display on page load without starting the timer automatically
 document.addEventListener('DOMContentLoaded', () => {
-    const timerElement = document.getElementById('timer');
-    timerElement.textContent = formatTime(minutes, seconds);
-    startTimer();
+    const timerText = document.querySelector('.time-text');
+    timerText.textContent = formatTime(minutes, seconds);
+    clearInterval(timer);
+    isPaused = true;
+    document.getElementById('pause-btn').textContent = 'Play';
 });
