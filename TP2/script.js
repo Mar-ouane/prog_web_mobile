@@ -3,9 +3,9 @@ let minutes = 15;
 let seconds = 0;
 let isPaused = false;
 let enteredTime = null;
-let initialTotalSeconds = minutes * 60; // new global total time
+let initialTotalSeconds = minutes * 60; 
 
-// Initialize progress ring element
+// Initialize progress for ring element
 const progressCircle = document.querySelector('.progress-ring__circle');
 const radius = progressCircle ? progressCircle.r.baseVal.value : 0;
 const circumference = 2 * Math.PI * radius;
@@ -23,7 +23,7 @@ function updateTimer() {
     const timerText = document.querySelector('.time-text');
     timerText.textContent = formatTime(minutes, seconds);
     
-    updateProgress(); // Animate circle based on time left
+    updateProgress(); // Animating circle based on time progress
 
     if (minutes === 0 && seconds === 0) {
         clearInterval(timer);
@@ -86,7 +86,7 @@ function chooseTime() {
         minutes = enteredTime;
         seconds = 0;
         clearInterval(timer);
-        isPaused = true; // ensure timer stays paused
+        isPaused = true; //  timer stays paused
         initialTotalSeconds = minutes * 60; // update total time
         const timerText = document.querySelector('.time-text');
         timerText.textContent = formatTime(minutes, seconds);
