@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- student in the same school class -->
+<schoolClass>
+    <person id="1" gender="male">
+        <lastName>Mourad</lastName>
+        <firstName>Marouane</firstName>
+        <address>N°18, berrevhid, Morocco</address>
+        <phoneNumbers>
+            <phone type="personal">0612345678</phone>
+            <phone type="home">0522123456</phone>
+        </phoneNumbers>
+        <email>marouane.mourad@example.com</email>
+    </person>
+    <person id="2" gender="male">
+        <lastName>koula</lastName>
+        <firstName>amine</firstName>
+        <address>456 street, Benguerir, Morocco</address>
+        <phoneNumbers>
+            <phone type="personal">0623456789</phone>
+        </phoneNumbers>
+        <email>fatima.benali@example.com</email>
+    </person>
+    <person id="3" gender="female">
+        <lastName>Ouazzani</lastName>
+        <firstName>khadija</firstName>
+        <address>789 Oak St, Marrakech, Morocco</address>
+        <phoneNumbers>
+            <phone type="personal">0634567890</phone>
+            <phone type="work">0523345678</phone>
+        </phoneNumbers>
+        <email>khadija.ouazzani@example.com</email>
+    </person>
+</schoolClass>
