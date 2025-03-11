@@ -3,31 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP3</title>
+    <title>TP3-TP4</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>TP1</h1>
+    <h1>TP3-TP4</h1>
+    <h2>using fetch :</h2>
     <div id="demo"></div>
-    <table>
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-            <th>Header 3</th>
-            <th>Header 4</th>
-        </tr>
-        <tr>
-            <td>Row 1, Cell 1</td>
-            <td>Row 1, Cell 2</td>
-            <td>Row 1, Cell 3</td>
-            <td>Row 1, Cell 4</td>
-        </tr>
-        <tr>
-            <td>Row 2, Cell 1</td>
-            <td>Row 2, Cell 2</td>
-            <td>Row 2, Cell 3</td>
-            <td>Row 2, Cell 4</td>
-    </table>
+    <h2>using ajax:</h2>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         fetch('students.xml')
@@ -37,38 +20,51 @@
                 const xmlDoc = parser.parseFromString(data, "text/xml");
                 const persons = xmlDoc.getElementsByTagName("person");
                 const demoDiv = document.getElementById("demo");
+                // creating the table
+                const table = document.createElement("table");
+                table.innerHTML = `
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Address</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        
+                    <tr>
+                        `
+                demoDiv.appendChild(table);
+                
 
                 for (let i = 0; i < persons.length; i++) {
                     const person = persons[i];
-                    const personDiv = document.createElement("div");
+                    const personTr = document.createElement("tr");
                     const gender = person.getAttribute("gender").charAt(0).toUpperCase();
-                    personDiv.innerHTML = `
-                        <p>Name: ${person.getElementsByTagName("firstName")[0].textContent} ${person.getElementsByTagName("lastName")[0].textContent}</p>
-                        <p>Address: ${person.getElementsByTagName("address")[0].textContent}</p>
-                        <p>Gender: ${gender}</p>
-                        <p>Email: ${person.getElementsByTagName("email")[0].textContent}</p>
+                    personTr.innerHTML = `
+                        <td>${person.getElementsByTagName("firstName")[0].textContent} ${person.getElementsByTagName("lastName")[0].textContent}</td>
+                        <td>${person.getElementsByTagName("address")[0].textContent}</td>
+                        <td>${gender}</td>
+                        <td>${person.getElementsByTagName("email")[0].textContent}</td>
                     `;
-                    demoDiv.appendChild(personDiv);
+                    table.appendChild(personTr);
                 }
 
                 // Add another person just before the last one
-                const newPersonDiv = document.createElement("div");
-                newPersonDiv.innerHTML = `
-                    <p>Name: ahmed something</p>
-                    <p>Address: 14 , --,Rabat</p>
-                    <p>Gender: M</p>
-                    <p>Email: ahmed@gmail.com</p>
+                const newPersonTr = document.createElement("tr");
+                newPersonTr.innerHTML = `
+                    <td>ahmed something</td>
+                    <td>14 , --,Rabat</td>
+                    <td>M</td>
+                    <td>ahmed@gmail.com</td>
                 `;
-                demoDiv.insertBefore(newPersonDiv, demoDiv.lastChild);
+                table.insertBefore(newPersonTr, table.lastChild);
 
                 // Modify the content of the second person
-                if (demoDiv.children.length > 1) {
-                    const secondPersonDiv = demoDiv.children[1];
-                    secondPersonDiv.innerHTML = `
-                        <p>Name: amine kola</p>
-                        <p>Address: 456 street, Benguerir, Morocco</p>
-                        <p>Gender: M</p>
-                        <p>Email: new-email@mail.com</p>
+                if (table.children.length > 1) {
+                    const secondPersonTr = table.children[1];
+                    secondPersonTr.innerHTML = `
+                        <td>amine kola</td>
+                        <td>456 street, Benguerir, Morocco</td>
+                        <td>M</td>
+                        <td>new-email@mail.com</td>
                     `;
                 }
             })
