@@ -3,53 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice Page</title>
+    <title>TP3-TP4</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello</h1>
-    <h2>working with XML </h2>
-    
-    <h3 id="result">
-    </h3>   
-</body>
-<footer>
+    <h1>TP3-TP4</h1>
+    <h2>using fetch :</h2>
+    <div id="demo"></div>
+    <h2>using ajax:</h2>
     <script>
-       xml_txt=`<schoolClass>
-    <person id="1" gender="male">
-        <lastName>Mourad</lastName>
-        <firstName>Marouane</firstName>
-        <address>N°18, berrevhid, Morocco</address>
-        <phoneNumbers>
-            <phone type="personal">0612345678</phone>
-            <phone type="home">0522123456</phone>
-        </phoneNumbers>
-        <email>marouane.mourad@example.com</email>
-    </person>
-    <person id="2" gender="male">
-        <lastName>koula</lastName>
-        <firstName>amine</firstName>
-        <address>456 street, Benguerir, Morocco</address>
-        <phoneNumbers>
-            <phone type="personal">0623456789</phone>
-        </phoneNumbers>
-        <email>fatima.benali@example.com</email>
-    </person>
-    <person id="3" gender="female">
-        <lastName>Ouazzani</lastName>
-        <firstName>khadija</firstName>
-        <address>789 Oak St, Marrakech, Morocco</address>
-        <phoneNumbers>
-            <phone type="personal">0634567890</phone>
-            <phone type="work">0523345678</phone>
-        </phoneNumbers>
-        <email>khadija.ouazzani@example.com</email>
-    </person>
-</schoolClass>`;
-    parser = new DOMParser();
-    xmlDoc = parser.parseFromString(xml_txt, "text/xml");
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('students.xml')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, "text/xml");
+                const persons = xmlDoc.getElementsByTagName("person");
+                const demoDiv = document.getElementById("demo");
+                // creating the table
+                const table = document.createElement("table");
+                table.innerHTML = `
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Address</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        
+                    <tr>
+                        `
+                demoDiv.appendChild(table);
+                
 
-    document.getElementById("result").innerHTML = xmlDoc.getElementsByTagName("person")[0].childNodes[1].nodeName + ": " 
-                                                    + xmlDoc.getElementsByTagName("person")[0].childNodes[1].childNodes[0].nodeValue ;
+                for (let i = 0; i < persons.length; i++) {
+                    const person = persons[i];
+                    const personTr = document.createElement("tr");
+                    const gender = person.getAttribute("gender").charAt(0).toUpperCase();
+                    personTr.innerHTML = `
+                        <td>${person.getElementsByTagName("firstName")[0].textContent} ${person.getElementsByTagName("lastName")[0].textContent}</td>
+                        <td>${person.getElementsByTagName("address")[0].textContent}</td>
+                        <td>${gender}</td>
+                        <td>${person.getElementsByTagName("email")[0].textContent}</td>
+                    `;
+                    table.appendChild(personTr);
+                }
+
+                // Add another person just before the last one
+                const newPersonTr = document.createElement("tr");
+                newPersonTr.innerHTML = `
+                    <td>ahmed something</td>
+                    <td>14 , --,Rabat</td>
+                    <td>M</td>
+                    <td>ahmed@gmail.com</td>
+                `;
+                table.insertBefore(newPersonTr, table.lastChild);
+
+                // Modify the content of the second person
+                if (table.children.length > 1) {
+                    const secondPersonTr = table.children[2];
+                    secondPersonTr.innerHTML = `
+                        <td>amine kola</td>
+                        <td>456 street, Benguerir, Morocco</td>
+                        <td>M</td>
+                        <td>new-email@mail.com</td>
+                    `;
+                }
+            })
+            .catch(error => console.error('Error fetching the XML file:', error));
+    });
     </script>
-</footer>
+</body>
 </html>
