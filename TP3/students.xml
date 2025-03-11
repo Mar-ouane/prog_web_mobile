@@ -18,7 +18,7 @@
         <phoneNumbers>
             <phone type="personal">0623456789</phone>
         </phoneNumbers>
-        <email>fatima.benali@example.com</email>
+        <email>amine.koula@example.com</email>
     </person>
     <person id="3" gender="female">
         <lastName>Ouazzani</lastName>
