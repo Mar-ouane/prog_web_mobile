@@ -35,7 +35,7 @@
                 
 
                 for (let i = 0; i < persons.length; i++) {
-                    const person = persons[i];
+                    const person = persons[i]; 
                     const personTr = document.createElement("tr");
                     const gender = person.getAttribute("gender").charAt(0).toUpperCase();
                     personTr.innerHTML = `
@@ -59,7 +59,7 @@
 
                 // Modify the content of the second person
                 if (table.children.length > 1) {
-                    const secondPersonTr = table.children[1];
+                    const secondPersonTr = table.children[2]; // 0 is the header, 1 is the first person
                     secondPersonTr.innerHTML = `
                         <td>amine kola</td>
                         <td>456 street, Benguerir, Morocco</td>
