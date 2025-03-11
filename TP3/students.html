@@ -9,10 +9,8 @@
 <body>
     <h1>TP3-TP4</h1>
     <h2>using fetch :</h2>
-    <div id="demo1"></div>
-    <!-- parte 2-->
+    <div id="demo"></div>
     <h2>using ajax:</h2>
-    <div id="demo2"></div>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         fetch('students.xml')
@@ -21,7 +19,7 @@
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(data, "text/xml");
                 const persons = xmlDoc.getElementsByTagName("person");
-                const demoDiv = document.getElementById("demo1");
+                const demoDiv = document.getElementById("demo");
                 // creating the table
                 const table = document.createElement("table");
                 table.innerHTML = `
@@ -37,7 +35,7 @@
                 
 
                 for (let i = 0; i < persons.length; i++) {
-                    const person = persons[i]; 
+                    const person = persons[i];
                     const personTr = document.createElement("tr");
                     const gender = person.getAttribute("gender").charAt(0).toUpperCase();
                     personTr.innerHTML = `
@@ -61,7 +59,7 @@
 
                 // Modify the content of the second person
                 if (table.children.length > 1) {
-                    const secondPersonTr = table.children[2]; // 0 is the header, 1 is the first person
+                    const secondPersonTr = table.children[1];
                     secondPersonTr.innerHTML = `
                         <td>amine kola</td>
                         <td>456 street, Benguerir, Morocco</td>
