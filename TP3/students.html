@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TP1</h1>
+    <div id="demo"></div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('students.xml')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, "text/xml");
+                const persons = xmlDoc.getElementsByTagName("person");
+                const demoDiv = document.getElementById("demo");
+
+                for (let i = 0; i < persons.length; i++) {
+                    const person = persons[i];
+                    const personDiv = document.createElement("div");
+                    const gender = person.getAttribute("gender").charAt(0).toUpperCase();
+                    personDiv.innerHTML = `
+                        <p>Name: ${person.getElementsByTagName("firstName")[0].textContent} ${person.getElementsByTagName("lastName")[0].textContent}</p>
+                        <p>Address: ${person.getElementsByTagName("address")[0].textContent}</p>
+                        <p>Gender: ${gender}</p>
+                        <p>Email: ${person.getElementsByTagName("email")[0].textContent}</p>
+                    `;
+                    demoDiv.appendChild(personDiv);
+                }
+
+                // Add another person just before the last one
+                const newPersonDiv = document.createElement("div");
+                newPersonDiv.innerHTML = `
+                    <p>Name: Ahmed</p>
+                    <p>Address: Unknown</p>
+                    <p>Gender: M</p>
+                    <p>Email: ahmed@example.com</p>
+                `;
+                demoDiv.insertBefore(newPersonDiv, demoDiv.lastChild);
+
+                // Modify the content of the second person
+                if (demoDiv.children.length > 1) {
+                    const secondPersonDiv = demoDiv.children[1];
+                    secondPersonDiv.innerHTML = `
+                        <p>Name: Modified Person</p>
+                        <p>Address: Modified Address</p>
+                        <p>Gender: F</p>
+                        <p>Email: modified@example.com</p>
+                    `;
+                }
+            })
+            .catch(error => console.error('Error fetching the XML file:', error));
+    });
+    </script>
+</body>
+</html>
