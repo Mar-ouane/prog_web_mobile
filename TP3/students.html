@@ -9,8 +9,10 @@
 <body>
     <h1>TP3-TP4</h1>
     <h2>using fetch :</h2>
-    <div id="demo"></div>
+    <div id="demo1"></div>
+    <!-- parte 2-->
     <h2>using ajax:</h2>
+    <div id="demo2"></div>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         fetch('students.xml')
@@ -19,7 +21,7 @@
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(data, "text/xml");
                 const persons = xmlDoc.getElementsByTagName("person");
-                const demoDiv = document.getElementById("demo");
+                const demoDiv = document.getElementById("demo1");
                 // creating the table
                 const table = document.createElement("table");
                 table.innerHTML = `
