@@ -11,6 +11,7 @@
             margin: 0 auto; 
             max-width: 500px; 
             padding: 20px; 
+            background-color: black;
         }
         h1, h2 {
             color: #333; 
@@ -31,7 +32,7 @@
             border-radius: 4px;
         }
         .data-display { 
-            background-color:rgb(83, 217, 247); 
+            background-color:rgb(44, 207, 244); 
             padding: 15px; 
             border-radius: 5px; 
             margin-bottom: 20px;
@@ -40,7 +41,7 @@
             border: 1px solid #ddd;
             text-decoration  : none;
             padding: 10px 15px;
-            background-color: #4CAF50;
+            background-color:rgb(71, 205, 229);
             color: white;
             border-radius: 4px;
             cursor: pointer;
@@ -48,7 +49,7 @@
     </style>
 </head>
 <body>
-    <h1>Registration Data</h1>
+    <h1 style="color: white;">Registration Data</h1>
     
     <div class="data-display">
         <h2>Data Submitted :</h2>
